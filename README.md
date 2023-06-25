@@ -35,7 +35,7 @@ It is recommended to add rules before you install suricata and the rules shall b
 
 the syntax of rules signatures must abide the following order:            
 - syntax   : `<ACTION> <PROTOCOL> <SOURCE IP> <SOURCE PORT> -> <DESTINATION IP> <DESTINATION PORT> <OPTIONS>`      
-- example  : ` alert       ssh        any         any      ->      any                 !22         (msg: "NON-SSH traffic in SSH Port")`    
+- example  : ` alert       ssh        any         any      ->      any                 !22       (msg: "ALERT")`    
 
 after it is done, the cron job will automatically updates the rules on its excecution. However if you wish update the rules on the spot, simply run the  `update-rules-suricata-.sh` script.
 
@@ -51,7 +51,7 @@ The following image shows the attack simulation without suricata nor firewall ac
      
 First, we will configure our firewall configuration     
 <img src="https://github.com/HyggeHalcyon/Hackathon-Semesta-DevOps/blob/main/Assets/enable%20firewall%20config.png" alt="running firewall configuration script" style="height: 100px; aspect-ratio: auto;"/>    
-<img src="https://github.com/HyggeHalcyon/Hackathon-Semesta-DevOps/blob/main/Assets/enable%20firewall%20config.png" alt="making sure configuration is correct" style="height: 100px; aspect-ratio: auto;"/>    
+<img src="https://github.com/HyggeHalcyon/Hackathon-Semesta-DevOps/blob/main/Assets/making%20sure%20firewall%20config.png" alt="making sure configuration is correct" style="height:200px; aspect-ratio: auto;"/>    
        
 Next, we'll configure our suricata while also actively monitoring the logs     
 <img src="https://github.com/HyggeHalcyon/Hackathon-Semesta-DevOps/blob/main/Assets/starting%20suricata.png" alt="starting suricata" style="height: 100px; aspect-ratio: auto;"/>    
