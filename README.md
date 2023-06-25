@@ -26,7 +26,7 @@ to install suricata use the following command:
 `sudo ./init-suricata.sh <INTERFACE> <LAN ADDRESS> <LAN MASK>`              
 to configure which interface or lan address that should be given as argument run the following `ip a s`     
 <img src="https://github.com/HyggeHalcyon/Hackathon-Semesta-DevOps/blob/main/Assets/ipas.png" style="height: 200px; aspect-ratio: auto;"/>     
-and because im simply running this on my VM it shall be:       
+and in my case because im running this on my VMWare it shall be:       
 `sudo ./init-suricata.sh eth0 192.168.83.130 24`   
 The script will:
 - install suricata
