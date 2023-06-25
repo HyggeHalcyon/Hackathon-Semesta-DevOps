@@ -47,14 +47,14 @@ it will simulate three attacks against our configured rules.
 3. it will try to ping 8.8.8.8 which according to our custom rules, it will drop it, this will test its IPS system
 
 The following image shows the attack simulation without suricata nor firewall active     
-<img src="<img src="https://github.com/HyggeHalcyon/Hackathon-Semesta-DevOps/blob/main/Assets/ipas.png" style="height: 200px; aspect-ratio: auto;"/> 
+<img src="https://github.com/HyggeHalcyon/Hackathon-Semesta-DevOps/blob/main/Assets/ipas.png" style="height: 200px; aspect-ratio: auto;"/> 
      
 First, we will configure our firewall configuration     
-<img src="https://github.com/HyggeHalcyon/Hackathon-Semesta-DevOps/blob/main/Assets/enable%20firewall%20config.png" alt="running firewall configuration script" style="height: 200px; aspect-ratio: auto;"/>    
-<img src="https://github.com/HyggeHalcyon/Hackathon-Semesta-DevOps/blob/main/Assets/enable%20firewall%20config.png" alt="making sure configuration is correct" style="height: 200px; aspect-ratio: auto;"/>    
+<img src="https://github.com/HyggeHalcyon/Hackathon-Semesta-DevOps/blob/main/Assets/enable%20firewall%20config.png" alt="running firewall configuration script" style="height: 100px; aspect-ratio: auto;"/>    
+<img src="https://github.com/HyggeHalcyon/Hackathon-Semesta-DevOps/blob/main/Assets/enable%20firewall%20config.png" alt="making sure configuration is correct" style="height: 100px; aspect-ratio: auto;"/>    
        
 Next, we'll configure our suricata while also actively monitoring the logs     
-<img src="https://github.com/HyggeHalcyon/Hackathon-Semesta-DevOps/blob/main/Assets/starting%20suricata.png" alt="starting suricata" style="height: 200px; aspect-ratio: auto;"/>    
+<img src="https://github.com/HyggeHalcyon/Hackathon-Semesta-DevOps/blob/main/Assets/starting%20suricata.png" alt="starting suricata" style="height: 100px; aspect-ratio: auto;"/>    
        
 Now its all done, we will try and simulate the attacks once again      
 <img src="https://github.com/HyggeHalcyon/Hackathon-Semesta-DevOps/blob/main/Assets/simulating%20attack.png" alt="simulating attack" style="height: 200px; aspect-ratio: auto;"/>    
