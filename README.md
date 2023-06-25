@@ -14,17 +14,17 @@ The scripts of the second task falls under `2. Rules Automation` directory
 ### ----- Install and Initialiazing   -----
 to install suricata use the following command:    
 `sudo ./init-suricata.sh <INTERFACE> <LAN ADDRESS> <LAN MASK>`              
-to configure which interface or lan address that should be given as argument run the following   
-`ip a s`
-
-and because im simply running this on my VM it shall be:     
-`sudo ./init-suricata.sh eth0 192.168.83.130 24`
+to configure which interface or lan address that should be given as argument run the following `ip a s`     
+<img src="https://github.com/HyggeHalcyon/Hackathon-Semesta-DevOps/blob/main/Assets/ipas.png" style="height: 200px; aspect-ratio: auto;"/>     
+and because im simply running this on my VM it shall be:       
+`sudo ./init-suricata.sh eth0 192.168.83.130 24`   
 The script will:
 - install suricata
 - configure home network and interfaces
 - configure and add custom and several open source rules
 - test rules to be functional properly
-- set a cron job to regularly update rules    
+- set a cron job to regularly update rules
+- monitor logs in real time
 *note that several distro might have different way of installation, I have provided it in the script but you still need to remove the comment yourself.*    
 
 Next, configure IPTable to policy to NFQUEUE using the following script `iptable-suricata.sh`   
@@ -40,7 +40,24 @@ the syntax of rules signatures must abide the following order:
 after it is done, the cron job will automatically updates the rules on its excecution. However if you wish update the rules on the spot, simply run the  `update-rules-suricata-.sh` script.
 
 ### ----- Simulation and testing attacks -----
-for demonstration and simple testing purposes, use `./NIDS-attack-sruicata.sh` script.
+for demonstration and simple testing purposes, use `./NIDS-attack-sruicata.sh` script.   
+it will simulate three attacks against our configured rules.    
+1. it will curl testmynids.org that will deliberately alert one of the open source *emerging threat* rules    
+2. it will try to ping 1.1.1.1 which alerts us according to our custom rules, this will test its IDS system    
+3. it will try to ping 8.8.8.8 which according to our custom rules, it will drop it, this will test its IPS system
 
-the attack is simulated using the following tool:
-[testmydnis](https://github.com/3CORESec/testmynids.org)
+The following image shows the attack simulation without suricata nor firewall active     
+<img src="<img src="https://github.com/HyggeHalcyon/Hackathon-Semesta-DevOps/blob/main/Assets/ipas.png" style="height: 200px; aspect-ratio: auto;"/> 
+     
+First, we will configure our firewall configuration     
+<img src="https://github.com/HyggeHalcyon/Hackathon-Semesta-DevOps/blob/main/Assets/enable%20firewall%20config.png" alt="running firewall configuration script" style="height: 200px; aspect-ratio: auto;"/>    
+<img src="https://github.com/HyggeHalcyon/Hackathon-Semesta-DevOps/blob/main/Assets/enable%20firewall%20config.png" alt="making sure configuration is correct" style="height: 200px; aspect-ratio: auto;"/>    
+       
+Next, we'll configure our suricata while also actively monitoring the logs     
+<img src="https://github.com/HyggeHalcyon/Hackathon-Semesta-DevOps/blob/main/Assets/starting%20suricata.png" alt="starting suricata" style="height: 200px; aspect-ratio: auto;"/>    
+       
+Now its all done, we will try and simulate the attacks once again      
+<img src="https://github.com/HyggeHalcyon/Hackathon-Semesta-DevOps/blob/main/Assets/simulating%20attack.png" alt="simulating attack" style="height: 200px; aspect-ratio: auto;"/>    
+        
+Now as we can see the suricata have succesfully captured and take actions towards those traffic as we can see from the logs. It has succesfully implement the *emerging threats* rules as well alerting and blocking traffic.      
+<img src="https://github.com/HyggeHalcyon/Hackathon-Semesta-DevOps/blob/main/Assets/suricata%20working%20.png" alt="simulating attack" style="height: 200px; aspect-ratio: auto;"/>    
