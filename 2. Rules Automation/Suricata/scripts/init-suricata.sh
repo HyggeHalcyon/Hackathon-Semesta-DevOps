@@ -48,6 +48,9 @@ install(){
     sudo cp ../config/local.rules /etc/suricata/rules
     sudo sed -i "s/interface: eth0/interface: $INTERFACE/" /etc/suricata/suricata.yaml
     sudo sed -i "s/HOME_NET:.*$/HOME_NET: "$LOCALNET_ADDR"/" /etc/suricata/suricata.yaml
+
+    # configure suricata custom rule ip with home network given in arguments
+    sudo sed -i "s/HOME_NET$/$LOCALNET_ADDR/" /etc/suricata/suricata.yaml
     
     # add open-source rules 
     sudo suricata-update enable-source et/open
@@ -62,16 +65,16 @@ install(){
     sudo suricata -T -c /etc/suricata/suricata.yaml -v
 
     # set cron job to regularly update rules
-    # daily='@daily "/path/to/update-rules-suricata.sh"'
-    # crontab -l > tempcron
-    # if ! grep -q "$daily" tempcron; then
-    #     echo $daily >> tempcron
-    #     crontab tempcron
-    # fi
-    # rm tempcron
+    daily='@daily "/path/to/update-rules-suricata.sh"'
+    crontab -l > tempcron
+    if ! grep -q "$daily" tempcron; then
+        echo $daily >> tempcron
+        crontab tempcron
+    fi
+    rm tempcron
 
     # enable on startup
-    # sudo systemctl enable suricata
+    sudo systemctl enable suricata
 
     # display information
     suricata -V

@@ -1,2 +1,10 @@
 alert icmp any any -> 8.8.8.8 any (msg:"ICMP Detected to 8.8.8.8"; sid:123456; rev:1; )
 drop icmp any any -> 1.1.1.1 any (msg:"ICMP Detected and Blocked to 1.1.1.1"; sid:123458; rev:1; )
+
+alert ssh any any -> HOME_NET !22 (msg:"SSH TRAFFIC on non-SSH port"; flow:to_client, not_established; classtype: misc-attack; target: dest_ip; sid:1000000;)
+
+alert tls any any -> HOME_NET !443 (msg:"TLS TRAFFIC on non-TLS HTTP port"; flow:to_client, not_established; classtype:misc-activity; sid:1000004;)
+
+drop ssh any any -> HOME_NET !22 (msg:"SSH TRAFFIC on non-SSH port"; classtype: misc-attack; target: dest_ip; sid:1000000;)
+
+alert tcp any any -> HOME_NET 80 (content:"AAAAAAAAAAAAAA", msg:"Buffer overrun detected.")

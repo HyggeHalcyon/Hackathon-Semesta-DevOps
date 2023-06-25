@@ -1,0 +1,2 @@
+alert icmp any any -> 8.8.8.8 any (msg:"ICMP Detected to 8.8.8.8"; sid:123456; rev:1; )
+drop icmp any any -> 1.1.1.1 any (msg:"ICMP Detected and Blocked to 1.1.1.1"; sid:123458; rev:1; )

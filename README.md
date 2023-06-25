@@ -1,13 +1,23 @@
 # Hackthon-Semesta-DevOps
 This repository contains my solution for the Semesta Scholarship System Administrator Hackathon. The event consist of 2 Task, one mandatory and and the second task can be chosen out of 2 choices.  
-
-<br />
-
+    
+<br />    
+    
 ## Cisco Packet Tracer   
-This is the mandatory task. The **`.pkt`** file is accessible under the appropriate directory.
+This is the mandatory task. The **`.pkt`** file is accessible under the appropriate directory.    
+Steps taken:      
+1. VLAN on Core1 and Core2 ✅     
+2. VTP Server and trunk port on Core1 and Core2 ✅       
+3. VTP Client and trunk port on access switches ✅  
+4. Port assignment on VLAN ✅   
+5. STP on Core1 and Core2 ✅  
+6. Etherchannel/Portchannel between Core1 and Core2 ✅     
+7. HSRP on Core1 and Core2 ✅     
+8. Configure Routing (OSPF) ❌      
+9. Configure ACL to only allow access from LAN ❌    
+        
+<br />       
      
-<br />
-
 ## IDS, IPS & Firewall Rules Automation    
 The scripts of the second task falls under `2. Rules Automation` directory       
          
