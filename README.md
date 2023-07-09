@@ -1,5 +1,5 @@
 # Hackthon-Semesta-DevOps
-This repository contains my solution for the Semesta Scholarship System Administrator Hackathon. The event consist of 2 Task, one mandatory and and the second task can be chosen out of 2 choices.  
+This repository contains my solution for the Semesta Scholarship Hackathon, where I was awarded ***1st place*** in the field of System Administrator. The event consisted of two tasks: one mandatory task and a second task that could be chosen from two options.
     
 <br />    
     
@@ -57,7 +57,7 @@ it will simulate three attacks against our configured rules.
 3. it will try to ping 8.8.8.8 which according to our custom rules, it will drop it, this will test its IPS system
 
 The following image shows the attack simulation without suricata nor firewall active     
-<img src="https://github.com/HyggeHalcyon/Hackathon-Semesta-DevOps/blob/main/Assets/ipas.png" style="height: 200px; aspect-ratio: auto;"/> 
+<img src="https://github.com/HyggeHalcyon/Hackathon-Semesta-DevOps/blob/main/Assets/simulate%20attack%20without%20suricata.png" style="height: 200px; aspect-ratio: auto;"/> 
      
 First, we will configure our firewall configuration     
 <img src="https://github.com/HyggeHalcyon/Hackathon-Semesta-DevOps/blob/main/Assets/enable%20firewall%20config.png" alt="running firewall configuration script" style="height: 100px; aspect-ratio: auto;"/>    
